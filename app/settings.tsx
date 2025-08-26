@@ -1,14 +1,9 @@
-// app/settings.js
-import { useRouter } from "expo-router";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function SettingsScreen() {
-  const router = useRouter();
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>⚙️ Settings Screen</Text>
-      <Button title="Go Back" onPress={() => router.replace("/")} />
     </View>
   );
 }

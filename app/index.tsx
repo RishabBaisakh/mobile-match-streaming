@@ -1,17 +1,9 @@
-// app/index.js
-import { useRouter } from "expo-router";
-import { Button, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function HomeScreen() {
-  const router = useRouter();
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>🏠 Home Screen</Text>
-      <Button
-        title="Go to Settings"
-        onPress={() => router.replace("/settings")}
-      />
     </View>
   );
 }

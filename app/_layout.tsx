@@ -1,26 +1,20 @@
-import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
-import "react-native-reanimated";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeScreen from "./index";
+import SettingsScreen from "./settings";
 
-export default function RootLayout() {
-  const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-  });
+const Tab = createBottomTabNavigator();
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
-
+export default function Layout() {
   return (
-    <Stack
-      screenOptions={{
-        headerStyle: { backgroundColor: "#6200EE" },
-        headerTintColor: "#fff",
-      }}
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: true,
+        tabBarActiveTintColor: "#6200EE",
+        tabBarInactiveTintColor: "gray",
+      })}
     >
-      <Stack.Screen name="index" options={{ title: "Home" }} />
-      <Stack.Screen name="settings" options={{ title: "Settings" }} />
-    </Stack>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
   );
 }
