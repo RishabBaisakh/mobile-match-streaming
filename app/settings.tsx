@@ -8,7 +8,7 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>⚙️ Settings Screen</Text>
-      <Button title="Go Back" onPress={() => router.back()} />
+      <Button title="Go Back" onPress={() => router.replace("/")} />
     </View>
   );
 }

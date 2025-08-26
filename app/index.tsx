@@ -8,7 +8,10 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>🏠 Home Screen</Text>
-      <Button title="Go to Settings" onPress={() => router.push("/settings")} />
+      <Button
+        title="Go to Settings"
+        onPress={() => router.replace("/settings")}
+      />
     </View>
   );
 }
